@@ -12,6 +12,7 @@ namespace NAudioTests.Wasapi
 {
     [TestFixture]
     [Category("IntegrationTest")]
+    [Category("SkipOnTeamCity")]
     public class AudioClientTests
     {
         [SetUp]

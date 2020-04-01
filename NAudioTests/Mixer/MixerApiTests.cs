@@ -11,6 +11,7 @@ namespace NAudioTests
 {
     [TestFixture]
     [Category("IntegrationTest")]
+    [Category("SkipOnTeamCity")]
     public class MixerApiTests
     {
         [Test]

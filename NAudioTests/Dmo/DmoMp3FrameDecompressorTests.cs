@@ -10,6 +10,7 @@ using NAudioTests.Utils;
 namespace NAudioTests.Dmo
 {
     [TestFixture]
+    [Category("SkipOnTeamCity")]
     public class DmoMp3FrameDecompressorTests
     {
         [SetUp]

@@ -114,6 +114,7 @@ namespace NAudioTests.WaveStreams
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanCreateWaveFileGreaterThan2Gb()
         {
             var tempFile = Path.GetTempFileName();
@@ -129,7 +130,8 @@ namespace NAudioTests.WaveStreams
             }
         }
 
-        [Test]      
+        [Test]
+        [Category("SkipOnTeamCity")]
         public void FailsToCreateWaveFileGreaterThan4Gb()
         {
             var tempFile = Path.GetTempFileName();
@@ -147,6 +149,7 @@ namespace NAudioTests.WaveStreams
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanWriteDataChunkGreaterThan2GB()
         {
             WaveFormat format = WaveFormat.CreateIeeeFloatWaveFormat(8000, 2);
@@ -165,6 +168,7 @@ namespace NAudioTests.WaveStreams
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void WritingDataChunkGreaterThan4GBThrows()
         {
             WaveFormat format = WaveFormat.CreateIeeeFloatWaveFormat(8000, 2);

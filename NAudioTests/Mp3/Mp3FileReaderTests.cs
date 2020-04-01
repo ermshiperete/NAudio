@@ -10,6 +10,7 @@ using NAudioTests.Utils;
 namespace NAudioTests.Mp3
 {
     [TestFixture]
+    [Category("SkipOnTeamCity")]
     public class Mp3FileReaderTests
     {
         [Test]
@@ -41,6 +42,7 @@ namespace NAudioTests.Mp3
         }
 
         [Test]
+
         public void ReadFrameAdvancesPosition()
         {
             var file = TestFileBuilder.CreateMp3File(5);
