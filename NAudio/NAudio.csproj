@@ -61,4 +61,7 @@
   <ItemGroup>
     <Content Include="Changes.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SIL.ReleaseTasks" Version="2.3.0" />
+  </ItemGroup>
 </Project>
