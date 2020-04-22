@@ -11,6 +11,7 @@ namespace NAudioTests
     public class WaveInDevicesTests
     {
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanRequestNumberOfWaveInDevices()
         {
             int deviceCount = WaveIn.DeviceCount;

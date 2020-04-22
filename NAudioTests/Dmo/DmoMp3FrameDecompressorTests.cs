@@ -10,7 +10,6 @@ using NAudioTests.Utils;
 namespace NAudioTests.Dmo
 {
     [TestFixture]
-    [Category("SkipOnTeamCity")]
     public class DmoMp3FrameDecompressorTests
     {
         [SetUp]
@@ -30,6 +29,7 @@ namespace NAudioTests.Dmo
 
         [Test]
         [Category("IntegrationTest")]
+        [Category("SkipOnTeamCity")]
         public void CanDecompressAnMp3()
         {
             var testFile = TestFileBuilder.CreateMp3File(20);

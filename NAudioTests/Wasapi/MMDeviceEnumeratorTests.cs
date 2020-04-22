@@ -10,7 +10,6 @@ namespace NAudioTests.Wasapi
 {
     [TestFixture]
     [Category("IntegrationTest")]
-    [Category("SkipOnTeamCity")]
     public class MMDeviceEnumeratorTests
     {
         [Test]
@@ -61,6 +60,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanGetDefaultAudioEndpoint()
         {
             OSUtils.RequireVista();
@@ -70,6 +70,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanActivateDefaultAudioEndpoint()
         {
             OSUtils.RequireVista();
@@ -87,6 +88,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanGetAudioClockClient()
         {
             OSUtils.RequireVista();

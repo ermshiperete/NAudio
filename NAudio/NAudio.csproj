@@ -1,21 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ProductVersion>9.0.30729</ProductVersion>
-    <TargetFramework>net35</TargetFramework>
+    <TargetFramework>net40</TargetFramework>
+    <TargetFrameworkIdentifer>.NETFramework</TargetFrameworkIdentifer>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
     <UpdateEnabled>false</UpdateEnabled>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <AssemblyTitle>NAudio</AssemblyTitle>
-    <Company>Mark Heath</Company>
+    <Company>SIL International</Company>
     <Product>NAudio</Product>
-    <Description>NAudio .NET Audio Library</Description>
-    <Copyright>© 2001-2018 Mark Heath</Copyright>
+    <Description>NAudio .NET Audio Library (supports files larger than 2GB)</Description>
+    <Copyright>© 2001-2020 Mark Heath, SIL International</Copyright>
+    <PackageLicenseExpression>Microsoft Public License (Ms-PL)</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/sillsdev/NAudio</PackageProjectUrl>
     <AssemblyVersion>1.8.5.0</AssemblyVersion>
     <FileVersion>1.8.5.0</FileVersion>
-    <DocumentationFile>bin\$(Configuration)\NAudio.XML</DocumentationFile>
+    <DocumentationFile>../output/$(Configuration)/NAudio.XML</DocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <OutputPath>../output/$(Configuration)</OutputPath>
+    <PackageOutputPath>../output</PackageOutputPath>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../naudio.snk</AssemblyOriginatorKeyFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Windows.Forms" />

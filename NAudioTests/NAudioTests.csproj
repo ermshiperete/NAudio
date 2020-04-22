@@ -1,7 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ProductVersion>9.0.30729</ProductVersion>
-    <TargetFramework>net35</TargetFramework>
+    <TargetFramework>net40</TargetFramework>
+    <TargetFrameworkIdentifer>.NETFramework</TargetFrameworkIdentifer>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <AssemblyTitle>NAudioTests</AssemblyTitle>
@@ -9,6 +12,9 @@
     <Copyright>Copyright ©  2007</Copyright>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <OutputPath>bin\$(Configuration)\</OutputPath>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../naudio.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Moq" Version="4.0.10827" />

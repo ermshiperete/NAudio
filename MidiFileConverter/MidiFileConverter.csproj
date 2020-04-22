@@ -6,7 +6,7 @@
     <AssemblyName>MIDI File Converter</AssemblyName>
     <FileUpgradeFlags />
     <UpgradeBackupLocation />
-    <TargetFramework>net35</TargetFramework>
+    <TargetFramework>net40</TargetFramework>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>

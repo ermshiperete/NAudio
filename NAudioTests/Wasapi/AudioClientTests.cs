@@ -12,7 +12,6 @@ namespace NAudioTests.Wasapi
 {
     [TestFixture]
     [Category("IntegrationTest")]
-    [Category("SkipOnTeamCity")]
     public class AudioClientTests
     {
         [SetUp]
@@ -29,12 +28,14 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanInitializeInSharedMode()
         {
             InitializeClient(AudioClientShareMode.Shared);
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanInitializeInExclusiveMode()
         {
             using (AudioClient audioClient = GetAudioClient())
@@ -51,6 +52,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanGetAudioRenderClient()
         {
             Assert.IsNotNull(InitializeClient(AudioClientShareMode.Shared).AudioRenderClient);
@@ -84,6 +86,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void DefaultFormatIsSupportedInSharedMode()
         {
             AudioClient client = GetAudioClient();
@@ -103,6 +106,7 @@ namespace NAudioTests.Wasapi
 
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanRequestIfFormatIsSupportedExtensible44100SharedMode()
         {
             WaveFormatExtensible desiredFormat = new WaveFormatExtensible(44100, 32, 2);
@@ -111,6 +115,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanRequestIfFormatIsSupportedExtensible44100ExclusiveMode()
         {
             WaveFormatExtensible desiredFormat = new WaveFormatExtensible(44100, 32, 2);
@@ -119,6 +124,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanRequestIfFormatIsSupportedExtensible48000()
         {
             WaveFormatExtensible desiredFormat = new WaveFormatExtensible(48000, 32, 2);
@@ -127,6 +133,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanRequestIfFormatIsSupportedExtensible48000_16bit()
         {
             WaveFormatExtensible desiredFormat = new WaveFormatExtensible(48000, 16, 2);
@@ -135,18 +142,21 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanRequestIfFormatIsSupportedPCMStereo()
         {
             GetAudioClient().IsFormatSupported(AudioClientShareMode.Shared, new WaveFormat(44100, 16, 2));
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanRequestIfFormatIsSupported8KHzMono()
         {
             GetAudioClient().IsFormatSupported(AudioClientShareMode.Shared, new WaveFormat(8000, 16, 1));
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanRequest48kHz16BitStereo()
         {
             GetAudioClient().IsFormatSupported(AudioClientShareMode.Shared, new WaveFormat(48000, 16, 2));
@@ -154,18 +164,21 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanRequest48kHz16BitMono()
         {
             GetAudioClient().IsFormatSupported(AudioClientShareMode.Shared, new WaveFormat(48000, 16, 1));
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanRequestIfFormatIsSupportedIeee()
         {
             GetAudioClient().IsFormatSupported(AudioClientShareMode.Shared, WaveFormat.CreateIeeeFloatWaveFormat(44100, 2));
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanPopulateABuffer()
         {
             AudioClient audioClient = InitializeClient(AudioClientShareMode.Shared);
@@ -178,6 +191,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test, MaxTime(2000)]
+        [Category("SkipOnTeamCity")]
         public void CanCaptureDefaultDeviceInDefaultFormatUsingWasapiCapture()
         {
             using (var wasapiClient = new WasapiCapture())
@@ -189,6 +203,7 @@ namespace NAudioTests.Wasapi
         }
  
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanReuseWasapiCapture()
         {
             using (var wasapiClient = new WasapiCapture())
