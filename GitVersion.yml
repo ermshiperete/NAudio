@@ -5,7 +5,7 @@ branches:
   master:
     tag: beta
     regex: (origin/)?(master|feature/nuget|NuGet)
-   hotfix:
+  hotfix:
     tag: beta
     regex: (origin/)?hotfix[/-]
     increment: Patch
