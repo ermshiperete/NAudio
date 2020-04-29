@@ -14,7 +14,7 @@
     <Product>NAudio</Product>
     <Description>NAudio .NET Audio Library (supports files larger than 2GB)</Description>
     <Copyright>© 2001-2020 Mark Heath, SIL International</Copyright>
-    <PackageLicenseExpression>Microsoft Public License (Ms-PL)</PackageLicenseExpression>
+    <PackageLicenseExpression>MS-PL</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sillsdev/NAudio</PackageProjectUrl>
     <AssemblyVersion>1.8.5.0</AssemblyVersion>
     <FileVersion>1.8.5.0</FileVersion>
@@ -62,6 +62,10 @@
     <Content Include="Changes.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="SIL.ReleaseTasks" Version="2.3.0" />
   </ItemGroup>
 </Project>
