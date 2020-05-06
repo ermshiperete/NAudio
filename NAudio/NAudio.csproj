@@ -12,9 +12,10 @@
     <AssemblyTitle>NAudio</AssemblyTitle>
     <Company>SIL International</Company>
     <Product>NAudio</Product>
-    <Description>NAudio .NET Audio Library (supports files larger than 2GB)</Description>
+    <Description>A fork of the NAudio .NET Audio Library which supports files larger than 2GB.</Description>
     <Copyright>© 2001-2020 Mark Heath, SIL International</Copyright>
-    <PackageId>NAudio</PackageId>
+    <Authors>Mark Heath and SIL International</Authors>
+    <PackageId>SIL.NAudio</PackageId>
     <PackageLicenseExpression>MS-PL</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/sillsdev/NAudio</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
