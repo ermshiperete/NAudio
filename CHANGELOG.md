@@ -19,3 +19,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 
 - Create nuget packages
+- Publish to nuget.org
