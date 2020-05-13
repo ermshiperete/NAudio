@@ -21,6 +21,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanGetMixFormat()
         {
             // don't need to initialize before asking for MixFormat
@@ -60,18 +61,21 @@ namespace NAudioTests.Wasapi
 
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanGetBufferSize()
         {
             Debug.WriteLine(String.Format("Buffer Size: {0}", InitializeClient(AudioClientShareMode.Shared).BufferSize));
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanGetCurrentPadding()
         {
             Debug.WriteLine(String.Format("CurrentPadding: {0}", InitializeClient(AudioClientShareMode.Shared).CurrentPadding));
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanGetDefaultDevicePeriod()
         {
             // should not need initialization
@@ -79,6 +83,7 @@ namespace NAudioTests.Wasapi
         }
 
         [Test]
+        [Category("SkipOnTeamCity")]
         public void CanGetMinimumDevicePeriod()
         {
             // should not need initialization
