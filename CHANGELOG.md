@@ -20,3 +20,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - Create nuget packages
 - Publish to nuget.org
+- base on upstream version 1.10.0

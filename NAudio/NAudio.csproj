@@ -1,7 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.0;net35;netstandard2.0;uap10.0</TargetFrameworks>
-    <Version>1.10.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Description>A fork of the NAudio .NET Audio Library which supports files larger than 2GB.</Description>
     <Copyright>© 2001-2020 Mark Heath, SIL International</Copyright>
@@ -97,7 +96,7 @@ See full changelog at https://github.com/sillsdev/NAudio/blob/master/CHANGELOG.m
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GitVersionTask" Version="5.0.1" PrivateAssets="all" />
+    <PackageReference Include="GitVersionTask" Version="5.3.4" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="all" />
     <PackageReference Include="SIL.ReleaseTasks" Version="2.3.0" PrivateAssets="all" />
   </ItemGroup>

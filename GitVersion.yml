@@ -4,7 +4,7 @@ mode: ContinuousDeployment
 branches:
   master:
     tag: beta
-    regex: (origin/)?(master|feature/nuget|NuGet)
+    regex: (origin/)?(master|NuGet)
   hotfix:
     tag: beta
     regex: (origin/)?hotfix[/-]
@@ -21,4 +21,4 @@ branches:
     mode: ContinuousDeployment
     tag: alpha
 # Tell gitversion to use a version number >= next-version
-next-version: 1.9.0
+next-version: 1.10.0
