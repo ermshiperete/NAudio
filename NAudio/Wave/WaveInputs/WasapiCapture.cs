@@ -1,35 +1,12 @@
 ﻿using System;
-using NAudio.Wave;
 using System.Threading;
 using System.Runtime.InteropServices;
+using NAudio.Wave;
 
 // for consistency this should be in NAudio.Wave namespace, but left as it is for backwards compatibility
 // ReSharper disable once CheckNamespace
 namespace NAudio.CoreAudioApi
 {
-    /// <summary>
-    /// Represents state of a capture device
-    /// </summary>
-    public enum CaptureState
-    {
-        /// <summary>
-        /// Not recording
-        /// </summary>
-        Stopped,
-        /// <summary>
-        /// Beginning to record
-        /// </summary>
-        Starting,
-        /// <summary>
-        /// Recording in progress
-        /// </summary>
-        Capturing,
-        /// <summary>
-        /// Requesting stop
-        /// </summary>
-        Stopping
-    }
-
     /// <summary>
     /// Audio Capture using Wasapi
     /// See http://msdn.microsoft.com/en-us/library/dd370800%28VS.85%29.aspx
@@ -221,6 +198,10 @@ namespace NAudio.CoreAudioApi
                 captureThread = new Thread(start);
                 captureThread.Start();
             }
+            captureState = CaptureState.Starting;
+            InitializeCaptureDevice();
+            captureThread = new Thread(() => CaptureThread(audioClient));
+            captureThread.Start();
         }
 
         /// <summary>
@@ -273,7 +254,11 @@ namespace NAudio.CoreAudioApi
                 if (captureState != CaptureState.Starting)
                     return; // Client probably requested stop (or some other state change happened) before we actually started capturing.
                 client.Start();
-                captureState = CaptureState.Capturing;
+                // avoid race condition where we stop immediately after starting
+                if (captureState == CaptureState.Starting)
+                {
+                    captureState = CaptureState.Capturing;
+                }
             }
             while (captureState == CaptureState.Capturing)
             {
@@ -319,9 +304,7 @@ namespace NAudio.CoreAudioApi
 
             while (packetSize != 0)
             {
-                int framesAvailable;
-                AudioClientBufferFlags flags;
-                IntPtr buffer = capture.GetBuffer(out framesAvailable, out flags);
+                IntPtr buffer = capture.GetBuffer(out int framesAvailable, out AudioClientBufferFlags flags);
 
                 int bytesAvailable = framesAvailable * bytesPerFrame;
 
@@ -330,7 +313,7 @@ namespace NAudio.CoreAudioApi
                 int spaceRemaining = Math.Max(0, recordBuffer.Length - recordBufferOffset);
                 if (spaceRemaining < bytesAvailable && recordBufferOffset > 0)
                 {
-                    if (DataAvailable != null) DataAvailable(this, new WaveInEventArgs(recordBuffer, recordBufferOffset));
+                    DataAvailable?.Invoke(this, new WaveInEventArgs(recordBuffer, recordBufferOffset));
                     recordBufferOffset = 0;
                 }
 
@@ -347,10 +330,7 @@ namespace NAudio.CoreAudioApi
                 capture.ReleaseBuffer(framesAvailable);
                 packetSize = capture.GetNextPacketSize();
             }
-            if (DataAvailable != null)
-            {
-                DataAvailable(this, new WaveInEventArgs(recordBuffer, recordBufferOffset));
-            }
+            DataAvailable?.Invoke(this, new WaveInEventArgs(recordBuffer, recordBufferOffset));
         }
 
         /// <summary>

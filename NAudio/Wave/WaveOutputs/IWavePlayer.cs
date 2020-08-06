@@ -23,16 +23,28 @@ namespace NAudio.Wave
         /// </summary>
         void Pause();
 
+#if WINDOWS_UWP
+        /// <summary>
+        /// Obsolete init method
+        /// </summary>
+        /// <param name="waveProvider"></param>
+        /// <returns></returns>
+        [Obsolete]
+        System.Threading.Tasks.Task Init(IWaveProvider waveProvider);
+
+        /// <summary>
+        /// Initialise playback
+        /// </summary>
+        /// <param name="waveProviderFunc">Function to create the waveprovider to be played
+        /// Called on the playback thread</param>
+        void Init(Func<IWaveProvider> waveProviderFunc);
+#else
         /// <summary>
         /// Initialise playback
         /// </summary>
         /// <param name="waveProvider">The waveprovider to be played</param>
         void Init(IWaveProvider waveProvider);
-
-        /// <summary>
-        /// Current playback state
-        /// </summary>
-        PlaybackState PlaybackState { get; }
+#endif
 
         /// <summary>
         /// The volume 
@@ -40,6 +52,11 @@ namespace NAudio.Wave
         /// Note that not all implementations necessarily support volume changes
         /// </summary>
         float Volume { get; set; }
+
+        /// <summary>
+        /// Current playback state
+        /// </summary>
+        PlaybackState PlaybackState { get; }
 
         /// <summary>
         /// Indicates that playback has gone into a stopped state due to 

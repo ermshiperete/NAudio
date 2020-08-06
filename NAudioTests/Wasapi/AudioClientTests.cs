@@ -39,7 +39,7 @@ namespace NAudioTests.Wasapi
         {
             using (AudioClient audioClient = GetAudioClient())
             {
-                WaveFormat waveFormat = new WaveFormat(44100, 16, 2); //audioClient.MixFormat;
+                WaveFormat waveFormat = new WaveFormat(48000, 16, 2); //audioClient.MixFormat;
                 long refTimesPerSecond = 10000000;
                 audioClient.Initialize(AudioClientShareMode.Exclusive,
                     AudioClientStreamFlags.None,
@@ -216,6 +216,7 @@ namespace NAudioTests.Wasapi
                 wasapiClient.StopRecording();
                 Thread.Sleep(1000);
                 wasapiClient.StartRecording();
+                Console.WriteLine("Disposing");
             }
         } 
 

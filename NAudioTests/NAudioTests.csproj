@@ -1,12 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProductVersion>9.0.30729</ProductVersion>
     <TargetFramework>net40</TargetFramework>
     <TargetFrameworkIdentifer>.NETFramework</TargetFrameworkIdentifer>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile></TargetFrameworkProfile>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <Version>1.10.0</Version>
     <AssemblyTitle>NAudioTests</AssemblyTitle>
     <Product>NAudioTests</Product>
     <Copyright>Copyright ©  2007</Copyright>
@@ -19,7 +17,7 @@
   <ItemGroup>
     <PackageReference Include="Moq" Version="4.0.10827" />
     <PackageReference Include="MSBuildTasks" Version="1.4.0.56" />
-    <PackageReference Include="NUnit" Version="2.5.10.11092" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Windows.Forms" />
